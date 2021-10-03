@@ -1,0 +1,13 @@
+* {
+    color: black;
+    background-color: white;
+}
+
+.navbar {
+    display: inline-box;
+}
+
+.nav-links {
+    list-style: none;
+    float: left;
+}
