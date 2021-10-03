@@ -38,20 +38,10 @@
         const firebase = initializeApp(firebaseConfig);
         //const analytics = getAnalytics(app); < - don't know if i need this
     </script>
-        
-    <script src="functions.js"></script>
+    
+    <script src="{{ url_for('static', filename='functions.js') }}"></script>
 
     <body>
-
-        <header class="nav-whole">
-            <nav>
-                <ul class="main-nav">
-                    <li class="navbar-brand"><a class="navbar-link" href="#body-top">Hermit</a></li>
-                    <li class="navbar-item-1"><a class="link" href="#calendar-input">Calendar Input</a></li>
-                    <li class="navbar-item-1"><a class="link" href="#about-us">About Us</a></li>
-                </ul>
-            </nav>
-        </header>
 
         <script>
             let timestampParse = (Min, H, AMPM) => {
