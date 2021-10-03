@@ -38,6 +38,17 @@
         const firebase = initializeApp(firebaseConfig);
         //const analytics = getAnalytics(app); < - don't know if i need this
     </script>
+
+    <script>
+        //export GOOGLE_APPLICATION_CREDENTIALS="/home/user/Downloads/service-account-file.json"
+        function firebase_init():
+            var admin = require('firebase-admin');
+            admin.initializeApp({
+              credential: admin.credential.applicationDefault(),
+            });
+            const app = admin.initializeApp();
+        firebase_init();
+    </script>
     
     <script src="{{ url_for('static', filename='functions.js') }}"></script>
 
@@ -85,7 +96,7 @@
             }
 
         </script>
-        <script src="{{ url_for('static', filename='run_functions.js') }}"></script>
+        <script type='text/javascript' src="{{ url_for('static', filename='run_functions.js') }}"></script>
         
         <header class="nav-whole">
             <nav>
