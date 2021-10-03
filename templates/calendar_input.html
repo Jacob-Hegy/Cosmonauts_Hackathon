@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+</html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hermit</title>
+
+
+        <link rel="stylesheet" href="./index.css" type="text/css" media="screen"> 
+        <link rel="stylesheet" type="text/css" href="./modern-normalize.css">
+        <link rel="icon" href="https://cdn.discordapp.com/attachments/889593440688545796/894050140598464562/unknown.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <script>
+            let timestampParse = (Min, H, AMPM) => {
+                // ^ Day, Hour, AMPM
+                if (AMPM === 'PM') {
+                    H = Number(H)+12;
+                }
+                /*console.log(H);
+                let currentYear = new Date().getFullYear();
+                //ERROR CHECKING ! HOORAY
+                let monthsW31 = ["01", "03", "05", "07", "08", "10", "12"];
+                if (!(monthsW31.includes(M)) && D === "31") {
+                    return "invalid";
+                }
+                if (M === "02" && Number(D) > 28) {
+                    return "invalid";
+                }*/
+
+                M = 9 // while we are in October and for timeStamp we should approximate
+                D = 3 // when judging happens
+
+                let timestampParameter = (currentYear * 31557600) + (M * 2628288) + (D * 86400) + (H * 3600) + (Min * 60);
+                return timestampParameter;
+            }
+
+            var PostWithTimestampClick = (identifier) => {
+                const Hour = getOption("HourBox"+identifier);
+                const AMPM = getOption("AMPM"+identifier);
+                const Min = getOption("MinuteBox"+identifier);
+                const ActivityType = getOption("activitiesChoices");
+
+                let timestampStart = timestampParse(Min, Hour, AMPM);
+            }
+
+        </script>
+        
+        <header class="nav-whole">
+            <nav>
+                <ul class="main-nav">
+                </ul>
+            </nav>
+        </header>
+
+
+        <section style="font-size: 25px; font-family: 'Zilla Slab'; text-align:center">
+
+            <form>
+                <label for="activities">Choose an Activity:</label>
+                <select name="activities" id="activitiesChoices">
+                    <option value="1">Being At Home</option>
+                    <option value="2">Driving</option>
+                    <option value="3">Eating</option>
+                    <option value="4">Sleeping</option>
+                </select>
+                <br><br>
+                <label for="sTime">What time do you usually start this activity?</label><br>
+                
+                <label>
+                    Hour
+                </label>
+
+                <select id="HourBox1">
+                    <option value="01">1</option><option value="02">2</option><option value="03">3</option><option value="04">4</option><option value="05">5</option>
+                    <option value="06">6</option><option value="07">7</option><option value="08">8</option><option value="09">9</option><option value="10">10</option>
+                    <option value="11">11</option><option value="12">12</option>
+                </select>
+
+                <label>
+                    Minute
+                </label>
+                
+                <select id="MinuteBox1">
+                    <option value="00">0</option><option value="15">15</option>
+                    <option value="30">30</option><option value="45">45</option>
+                </select>
+
+                <select id="AMPM1">
+                    <option value="AM">AM</option><option value="PM">PM</option>
+                </select>
+
+                <br>
+                <label for="eTime">What time do you usually stop doing this activity?</label><br>
+                <label>
+                    Hour
+                </label>
+
+                    <select id="HourBox2">
+                        <option value="01">1</option><option value="02">2</option><option value="03">3</option><option value="04">4</option><option value="05">5</option>
+                        <option value="06">6</option><option value="07">7</option><option value="08">8</option><option value="09">9</option><option value="10">10</option>
+                        <option value="11">11</option><option value="12">12</option>
+                    </select>
+
+                    <label>
+                        Minute
+                    </label>
+                    
+                    <select id="MinuteBox2">
+                        <option value="00">0</option><option value="15">15</option>
+                        <option value="30">30</option><option value="45">45</option>
+                    </select>
+
+                    <select id="AMPM2">
+                        <option value="AM">AM</option><option value="PM">PM</option>
+                    </select>
+                
+                <br><br>
+                <button onclick="PostWithTimestampClick()" style="font-size:35px"> Submit</button>  
+            </form> 
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="author-box" id="contact">
+                    <img alt="Mihir Sahu" src="https://cdn.discordapp.com/attachments/889593440688545796/894145508963143730/mihir_headshot.jpg">
+                    <img alt="Vanessa Zambrano" src="https://cdn.discordapp.com/attachments/889593440688545796/894041571408879667/headshot.jpg">
+                    <img alt="Jacob Hegy" src="https://cdn.discordapp.com/attachments/889593440688545796/894041758625832970/BB_Pose.jpeg">
+                    <div class="author-box-comment">
+                        <p class="made-with-love">Made with love 💜</p>
+                        <p><br> Mihir Sahu <br> Vanessa Zambrano <br> Jacob Hegy</p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-left: 50px;">
+                Icons made by <a class="attribution" href="https://www.freepik.com" title="Freepik">Freepik</a> from <a class="attribution "href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+            </div>
+        </section>
+    </body>
+</html>
