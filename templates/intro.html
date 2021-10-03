@@ -6,8 +6,6 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
         import { firestore } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js";  
         import { storage } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-storage.js"; 
-        import { functions } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-functions.js";
-        import { messaging } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-messaging.js";
 
         const firebaseConfig = {
         apiKey: "AIzaSyDbusyMan78yGyLNtyM8paGKgG9LtASqW4",
@@ -22,42 +20,49 @@
         // Initialize Firebase
         const firebase = initializeApp(firebaseConfig);
         //const analytics = getAnalytics(app); < - don't know if i need this
-        var storageRef = firebase.storage().ref();
-        var staticRef = storageRef.child('static')
     </script>
 
     <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Hermit</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hermit</title>
 
-      <link rel="stylesheet" href="" type="text/css" media="screen"> 
-      <link rel="stylesheet" type="text/css" href="">
-      <link rel="icon" href="https://cdn.discordapp.com/attachments/889593440688545796/894050140598464562/unknown.png">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://firebasestorage.googleapis.com/v0/b/horizontal-data-327923.appspot.com/o/static%2Findex.css?alt=media&token=6a5bd93d-b119-4c80-ac3f-e93009e68cd3" type="text/css" media="screen"> 
+        <link rel="stylesheet" type="text/css" href="https://firebasestorage.googleapis.com/v0/b/horizontal-data-327923.appspot.com/o/static%2Fmodern-normalize.css?alt=media&token=900de661-c5ce-4034-9c1b-cc808641f4b8">
+        <link rel="icon" href="https://cdn.discordapp.com/attachments/889593440688545796/894050140598464562/unknown.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+        <style>
+        section.title {
+            margin-left:auto;
+            margin-right:auto;
+        }
+        </style>
     </head>
 
     <body>
         <header class="nav-whole">
-            <nav>
+             <nav>
                 <ul class="main-nav">
+
                 </ul>
             </nav>
         </header>
-        <section>
-            <h1>Hello world!</h1>
+        <section class="title">
+            <h1>Hello!</h1>
+            <h3>Are you, too, here to be a cautious crab?</h3>
         </section>
-
+    
         <section>
             <div class="container">
                 <div class="author-box" id="contact">
                     <img alt="Mihir Sahu" src="https://cdn.discordapp.com/attachments/889593440688545796/894145508963143730/mihir_headshot.jpg">
                     <img alt="Vanessa Zambrano" src="https://cdn.discordapp.com/attachments/889593440688545796/894041571408879667/headshot.jpg">
                     <img alt="Jacob Hegy" src="https://cdn.discordapp.com/attachments/889593440688545796/894041758625832970/BB_Pose.jpeg">
-                    <div class="author-box-comment">
+                        <div class="author-box-comment">
                         <p class="made-with-love">Made with love 💜</p>
                         <p><br> Mihir Sahu <br> Vanessa Zambrano <br> Jacob Hegy</p>
                     </div>
@@ -66,4 +71,3 @@
             <div>Icons made by <a class="attribution" href="https://www.freepik.com" title="Freepik">Freepik</a> from <a class="attribution "href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
         </section>
     </body>
-</html>
