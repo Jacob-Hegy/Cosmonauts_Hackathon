@@ -80,11 +80,12 @@
 
                 let timestampStart = timestampParse(startMin, startHour, startAMPM);
                 let timestampEnd = timestampParse(endMin, endHour, endAMPM);
+                console.log(timestampStart)
 
-                postCalendarData(timestampStart,timestampEnd,ActivityType);
             }
 
         </script>
+        <script src="{{ url_for('static', filename='run_functions.js') }}"></script>
         
         <header class="nav-whole">
             <nav>
@@ -95,7 +96,6 @@
                 </ul>
             </nav>
         </header>
-
 
         <section class="form-container" style="font-size: 25px; font-family: 'Zilla Slab'; text-align:center">
 
