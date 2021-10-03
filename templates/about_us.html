@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Hermit</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" type="text/css" media="screen">
+      <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='modern-normalize.css')}}">
+      <link rel="icon" href="{{url_for('static', filename='hermit-icon.png')}}">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header class="nav-whole">
+            <nav>
+                <ul class="main-nav">
+                    <!--<li><img class="hermit-image" src="{{ url_for('static', filename='hermit-icon.png') }}"></li>-->
+                    <li class="navbar-brand"><a class="navbar-link" href="#body-top">Hermit</a></li>
+                    <li class="navbar-item-1"><a class="link" href="#calendar-input">Calendar Input</a></li>
+                    <li class="navbar-item-1"><a class="link" href="#about-us">About Us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <div class="container">
+                <div class="author-box" id="contact">
+                    <img alt="Mihir Sahu" src="{{url_for('static', filename='mihir_headshot.jpg')}}">
+                    <img alt="Vanessa Zambrano" src="{{url_for('static', filename='vanessa_headshot.jpg')}}">
+                    <img alt="Jacob Hegy" src="{{url_for('static', filename='jacob_headshot.jpeg')}}">
+                    <div class="author-box-comment">
+                      <p class="made-with-love">Made with love</p>
+                      <p><br> Mihir Sahu <br> Vanessa Zambrano <br> Jacob Hegy</p>
+                    </div>
+                </div>
+            </div>
+            <div>Icons made by <a class="attribution" href="https://www.freepik.com" title="Freepik">Freepik</a> from <a class="attribution "href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        </section>
+    </body>
+</html>

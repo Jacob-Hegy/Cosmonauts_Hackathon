@@ -7,4 +7,12 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/home')
 def home_page():
-    return render_template('index.html')
+    return render_template('home.html')
+
+@app.route('/calendar-input')
+def calendar_input():
+    return render_template('calendar_input.html')
+
+@app.route('/about-us')
+def about_us():
+    return render_template('about_us.html')
