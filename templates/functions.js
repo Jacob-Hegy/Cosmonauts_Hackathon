@@ -26,9 +26,11 @@ const userName = document.querySelector("#userNameBox");
 
 var db = firebase.firestore();
 
-let postData = () => {
-    
+let postCalendarData = (timestampParameter, activityType) => {
+
     db.collection(userName).doc(userName+"auth-token").set({
+        timestamp : firebase.Timestamp(timestampParameter, 0),
+        
 
     })
 }
