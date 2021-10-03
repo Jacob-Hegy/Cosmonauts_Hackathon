@@ -46,9 +46,9 @@
                 if (M === "02" && Number(D) > 28) {
                     return "invalid";
                 }*/
-
-                M = 9 // while we are in October and for timeStamp we should approximate
-                D = 3 // when judging happens
+                currentYear = 2021;
+                M = 9; // while we are in October and for timeStamp we should approximate
+                D = 3; // when judging happens
 
                 let timestampParameter = (currentYear * 31557600) + (M * 2628288) + (D * 86400) + (H * 3600) + (Min * 60);
                 return timestampParameter;
