@@ -26,11 +26,18 @@ const userName = document.querySelector("#userNameBox");
 
 var db = firebase.firestore();
 
-let postCalendarData = (timestampParameter, activityType) => {
+let postCalendarData = (timeStartParam, timeEndParam, activityType) => {
+
+    //if (SET UP CONDITIONALS) 
+        //let atHomeBool = true or false depending on conditions specified in Google Doc
 
     db.collection(userName).doc(userName+"auth-token").set({
-        timestamp : firebase.Timestamp(timestampParameter, 0),
-        
-
-    })
+        timestampStart : firebase.Timestamp(timeStartParam, 0),
+        timestampEnd : firebase.Timestamp(timeEndParam, 0),
+        ActivityType : activityType,
+        atHome : false
+    }).then(function() {console.log("Document successfully written!");
+    }).catch(function(error) {
+        console.log("Error writing document: ", error);
+    });
 }

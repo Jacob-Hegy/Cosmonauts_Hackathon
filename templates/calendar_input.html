@@ -14,8 +14,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
-    </head>
 
+    </head>
+        <script src="functions.js"></script>
     <body>
         <script>
             let timestampParse = (Min, H, AMPM) => {
@@ -41,13 +42,26 @@
                 return timestampParameter;
             }
 
-            var PostWithTimestampClick = (identifier) => {
-                const Hour = getOption("HourBox"+identifier);
-                const AMPM = getOption("AMPM"+identifier);
-                const Min = getOption("MinuteBox"+identifier);
+            var PostWithTimestampClick = () => {
+                const startHour = getOption("HourBox1");
+                const startAMPM = getOption("AMPM1");
+                const startMin = getOption("MinuteBox1");
+
+                const endHour = getOption("HourBox2");
+                const endAMPM = getOption("AMPM2");
+                const endMin = getOption("MinuteBox2");
+
                 const ActivityType = getOption("activitiesChoices");
 
-                let timestampStart = timestampParse(Min, Hour, AMPM);
+                let timestampStart = timestampParse(startMin, startHour, startAMPM);
+                let timestampEnd = timestampParse(endMin, endHour, endAMPM);
+
+                if (timestampStart == "invalid" || timestampEnd == "invalid") {
+                    document.getElementById("errorHandler").innerHTML = '<span style="color:red">Invalid input! Try again.</span>'
+                }
+                else {
+                    postCalendarData(timestampStart,timestampEnd,ActivityType);
+                }
             }
 
         </script>
@@ -61,7 +75,7 @@
 
 
         <section style="font-size: 25px; font-family: 'Zilla Slab'; text-align:center">
-
+                <div id = "errorHandler"></div>
             <form>
                 <label for="activities">Choose an Activity:</label>
                 <select name="activities" id="activitiesChoices">
