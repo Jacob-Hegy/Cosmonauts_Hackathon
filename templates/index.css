@@ -320,3 +320,13 @@ h2 {
 .made-with-love {
     font-weight: bolder;
 }
+
+.about-us {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 3%;
+}
+
+.form-container {
+    margin-top: 3%;
+}

@@ -18,13 +18,13 @@
             <nav>
                 <ul class="main-nav">
                     <!--<li><img class="hermit-image" src="{{ url_for('static', filename='hermit-icon.png') }}"></li>-->
-                    <li class="navbar-brand"><a class="navbar-link" href="#body-top">Hermit</a></li>
-                    <li class="navbar-item-1"><a class="link" href="#calendar-input">Calendar Input</a></li>
-                    <li class="navbar-item-1"><a class="link" href="#about-us">About Us</a></li>
+                    <li class="navbar-brand"><a class="navbar-link" href="{{ url_for('landing_page') }}">Hermit</a></li>
+                    <li class="navbar-item-1"><a class="link" href="{{ url_for('calendar_input') }}">Calendar Input</a></li>
+                    <li class="navbar-item-1"><a class="link" href="{{ url_for('about_us') }}">About Us</a></li>
                 </ul>
             </nav>
         </header>
-        <section>
+        <section class="about-us">
           <div>
               <p>Ever since we met 8 hours ago, we've been inseparable (seriously!). We never knew how great of an icebreaker pain and tourment would be (just kidding!).</p>
               <br>
